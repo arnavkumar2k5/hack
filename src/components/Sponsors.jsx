@@ -49,11 +49,11 @@ function Sponsors() {
         </div>
         
         {/* Hover glow effect */}
-        {/* <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div> */}
+        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
       </div>
       
       {/* External glow */}
-      {/* <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 to-blue-400/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-10"></div> */}
+      <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 to-blue-400/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-10"></div>
     </div>
   )
 
@@ -75,13 +75,13 @@ function Sponsors() {
         ></div>
         
         {/* Floating Orbs */}
-        {/* <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div> */}
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         
         {/* Geometric Shapes */}
-        {/* <div className="absolute top-20 left-10 w-6 h-6 bg-cyan-400/40 transform rotate-45 animate-spin delay-300" style={{animation: 'spin 8s linear infinite'}}></div>
+        <div className="absolute top-20 left-10 w-6 h-6 bg-cyan-400/40 transform rotate-45 animate-spin delay-300" style={{animation: 'spin 8s linear infinite'}}></div>
         <div className="absolute top-1/3 right-20 w-4 h-4 bg-blue-400/40 rounded-full animate-ping delay-700"></div>
-        <div className="absolute bottom-20 left-1/4 w-8 h-2 bg-gradient-to-r from-cyan-400/40 to-blue-400/40 animate-pulse delay-1000"></div> */}
+        <div className="absolute bottom-20 left-1/4 w-8 h-2 bg-gradient-to-r from-cyan-400/40 to-blue-400/40 animate-pulse delay-1000"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">

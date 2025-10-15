@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 import { X, Send } from 'lucide-react'
 import { messages as defaultMessages } from '../lib/ChatBot_Handler'
 import { sendChatMessage } from '../lib/sendChatBotResponse'
@@ -19,21 +18,9 @@ const Chatbot = ({ onClose, isOpen }) => {
 
   const TypingIndicator = () => (
     <div className="flex space-x-1 px-3 py-2 bg-gray-200 rounded-full w-fit">
-      <motion.span
-        animate={{ opacity: [0.3, 1, 0.3] }}
-        transition={{ repeat: Infinity, duration: 1 }}
-        className="w-2 h-2 bg-gray-500 rounded-full"
-      />
-      <motion.span
-        animate={{ opacity: [0.3, 1, 0.3] }}
-        transition={{ repeat: Infinity, duration: 1, delay: 0.2 }}
-        className="w-2 h-2 bg-gray-500 rounded-full"
-      />
-      <motion.span
-        animate={{ opacity: [0.3, 1, 0.3] }}
-        transition={{ repeat: Infinity, duration: 1, delay: 0.4 }}
-        className="w-2 h-2 bg-gray-500 rounded-full"
-      />
+      <span className="w-2 h-2 bg-gray-500 rounded-full animate-pulse" style={{ animationDelay: '0s' }} />
+      <span className="w-2 h-2 bg-gray-500 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }} />
+      <span className="w-2 h-2 bg-gray-500 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }} />
     </div>
   )
 
@@ -96,30 +83,25 @@ const Chatbot = ({ onClose, isOpen }) => {
       </div>
 
       <div className="flex-1 p-4 overflow-y-auto space-y-3 scrollbar-thin scrollbar-thumb-gray-300">
-        <AnimatePresence>
-          {msgList.map((msg, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.2 }}
-              className={`flex ${msg.user ? 'justify-end' : 'justify-start'}`}
+        {msgList.map((msg, index) => (
+          <div
+            key={index}
+            className={`flex ${msg.user ? 'justify-end' : 'justify-start'} opacity-100 transition-opacity duration-200`}
+          >
+            <div
+              className={`max-w-[70%] px-4 py-2 rounded-2xl shadow-sm ${msg.user
+                ? 'bg-blue-600 text-white rounded-br-none'
+                : 'bg-gray-100 text-gray-800 rounded-bl-none'
+                }`}
             >
-              <div
-                className={`max-w-[70%] px-4 py-2 rounded-2xl shadow-sm ${msg.user
-                  ? 'bg-blue-600 text-white rounded-br-none'
-                  : 'bg-gray-100 text-gray-800 rounded-bl-none'
-                  }`}
-              >
-                {msg.isTyping && msg.message === '' ? (
-                  <TypingIndicator />
-                ) : (
-                  msg.message
-                )}
-              </div>
-            </motion.div>
-          ))}
-        </AnimatePresence>
+              {msg.isTyping && msg.message === '' ? (
+                <TypingIndicator />
+              ) : (
+                msg.message
+              )}
+            </div>
+          </div>
+        ))}
         <div ref={messagesEndRef} />
       </div>
 

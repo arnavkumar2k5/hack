@@ -46,16 +46,16 @@ function HeroSection() {
         <div className="absolute inset-0 opacity-10 hero-grid-pattern"></div>
         
         {/* Glowing Orbs with Enhanced Animations */}
-        {/* <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full blur-3xl hero-floating-orb animate-pulse"></div>
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full blur-3xl hero-floating-orb animate-pulse"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-cyan-500/15 to-blue-600/15 rounded-full blur-3xl hero-floating-orb animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/6 w-48 h-48 bg-gradient-to-r from-blue-400/20 to-cyan-600/20 rounded-full blur-2xl hero-floating-orb delay-500"></div> */}
+        <div className="absolute top-1/2 left-1/6 w-48 h-48 bg-gradient-to-r from-blue-400/20 to-cyan-600/20 rounded-full blur-2xl hero-floating-orb delay-500"></div>
         
         {/* Floating Geometric Shapes */}
-        {/* <div className="absolute top-20 left-20 w-4 h-4 bg-blue-400/60 rotate-45 animate-spin-slow"></div>
+        <div className="absolute top-20 left-20 w-4 h-4 bg-blue-400/60 rotate-45 animate-spin-slow"></div>
         <div className="absolute top-1/3 right-32 w-6 h-6 bg-cyan-400/50 rounded-full animate-ping delay-300"></div>
         <div className="absolute bottom-1/3 left-16 w-8 h-2 bg-gradient-to-r from-cyan-400/40 to-blue-500/40 animate-pulse delay-700"></div>
         <div className="absolute bottom-20 right-20 w-3 h-8 bg-gradient-to-b from-blue-400/50 to-cyan-400/50 animate-bounce delay-500"></div>
-        <div className="absolute top-1/2 right-10 w-5 h-5 bg-blue-400/40 transform rotate-12 animate-pulse delay-1000"></div> */}
+        <div className="absolute top-1/2 right-10 w-5 h-5 bg-blue-400/40 transform rotate-12 animate-pulse delay-1000"></div>
       </div>
 
       {/* Main Content */}

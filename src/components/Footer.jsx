@@ -80,12 +80,12 @@ function Footer() {
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-gray-900/30 to-black/50">
         {/* Animated particles */}
-        {/* <div className="absolute top-20 left-1/4 w-64 h-64 bg-gradient-to-r from-cyan-500/5 to-blue-500/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-1/4 w-80 h-80 bg-gradient-to-r from-blue-500/5 to-cyan-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div> */}
+        <div className="absolute top-20 left-1/4 w-64 h-64 bg-gradient-to-r from-cyan-500/5 to-blue-500/5 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-1/4 w-80 h-80 bg-gradient-to-r from-blue-500/5 to-cyan-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
         
         {/* Geometric shapes */}
-        {/* <div className="absolute top-10 right-20 w-3 h-3 bg-cyan-400/20 rotate-45 animate-bounce delay-300"></div>
-        <div className="absolute bottom-16 left-16 w-2 h-8 bg-blue-400/30 animate-pulse delay-700"></div> */}
+        <div className="absolute top-10 right-20 w-3 h-3 bg-cyan-400/20 rotate-45 animate-bounce delay-300"></div>
+        <div className="absolute bottom-16 left-16 w-2 h-8 bg-blue-400/30 animate-pulse delay-700"></div>
       </div>
 
       <div className="relative z-10 container mx-auto px-6 py-16">

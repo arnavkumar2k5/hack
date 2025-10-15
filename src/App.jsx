@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { AnimatePresence } from 'framer-motion'
 import {BotMessageSquare} from "lucide-react"
 import './App.css'
 
@@ -11,7 +10,6 @@ import Team from './components/Team'
 import Faq from './components/Faq'
 import Footer from './components/Footer'
 import Chatbot from './components/ChatBot'
-import { span } from 'framer-motion/client'
 
 function App() {
   const [isOpen, setIsOpen] = useState(false)

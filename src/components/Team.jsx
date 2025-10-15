@@ -69,12 +69,12 @@ function Team() {
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-gray-900/30 to-black/50">
         {/* Animated particles */}
-        {/* <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div> */}
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         
         {/* Geometric shapes */}
-        {/* <div className="absolute top-20 right-20 w-4 h-4 bg-cyan-400/30 rotate-45 animate-bounce delay-300"></div>
-        <div className="absolute bottom-32 left-16 w-3 h-12 bg-blue-400/40 animate-pulse delay-700"></div> */}
+        <div className="absolute top-20 right-20 w-4 h-4 bg-cyan-400/30 rotate-45 animate-bounce delay-300"></div>
+        <div className="absolute bottom-32 left-16 w-3 h-12 bg-blue-400/40 animate-pulse delay-700"></div>
       </div>
 
       <div className="relative z-10 container mx-auto px-6">
