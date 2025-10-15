@@ -66,7 +66,7 @@ function Team() {
 
   return (
     <section id="team" className="py-20 bg-gradient-to-b from-black via-gray-900 to-black relative overflow-hidden">
-      {/* Background Effects */}
+      {/* Background Effects - Will be hidden on mobile via CSS */}
       <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-gray-900/30 to-black/50">
         {/* Animated particles */}
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl animate-pulse"></div>

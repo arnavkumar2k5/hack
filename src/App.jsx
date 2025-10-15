@@ -1,28 +1,40 @@
-import { useState } from 'react'
+import { useState, lazy, Suspense, useEffect } from 'react'
 import {BotMessageSquare} from "lucide-react"
 import './App.css'
+import { applyPerformanceMode } from './lib/performance'
 
 import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
 import About from './components/About'
-import Sponsors from './components/Sponsors'
-import Team from './components/Team'
-import Faq from './components/Faq'
-import Footer from './components/Footer'
-import Chatbot from './components/ChatBot'
+
+// Lazy load less critical components for better mobile performance
+const Sponsors = lazy(() => import('./components/Sponsors'))
+const Team = lazy(() => import('./components/Team'))
+const Faq = lazy(() => import('./components/Faq'))
+const Footer = lazy(() => import('./components/Footer'))
+const Chatbot = lazy(() => import('./components/ChatBot'))
 
 function App() {
   const [isOpen, setIsOpen] = useState(false)
+
+  // Apply performance optimizations on mount
+  useEffect(() => {
+    applyPerformanceMode()
+  }, [])
 
   return (
     <div id='hero' className="App relative">
       <Navbar />
       <HeroSection />
       <About />
-      <Sponsors />
-      <Team />
-      <Faq />
-      <Footer />
+      
+      {/* Lazy load non-critical sections */}
+      <Suspense fallback={<div className="py-20 text-center text-white">Loading...</div>}>
+        <Sponsors />
+        <Team />
+        <Faq />
+        <Footer />
+      </Suspense>
 
       <button
         onClick={() => setIsOpen(!isOpen)}
@@ -53,10 +65,14 @@ function App() {
         </span>
       </button>
 
-
-      <div className={`${isOpen ? "w-[70vw] h-[70vh] " : "h-0 w-0"} transition-all duration-700`}>
-        <Chatbot isOpen={isOpen} onClose={() => setIsOpen(false)} />
-      </div>
+      {/* Only render chatbot when opened */}
+      {isOpen && (
+        <Suspense fallback={<div className="fixed bottom-6 right-6 w-96 h-96 bg-gray-900 rounded-2xl"></div>}>
+          <div className={`${isOpen ? "w-[70vw] h-[70vh] " : "h-0 w-0"} transition-all duration-700`}>
+            <Chatbot isOpen={isOpen} onClose={() => setIsOpen(false)} />
+          </div>
+        </Suspense>
+      )}
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
 
 function HeroSection() {
   // Countdown timer state
@@ -8,8 +8,11 @@ function HeroSection() {
     minutes: 0,
     seconds: 0
   })
+  
+  // Use ref to avoid unnecessary re-renders
+  const intervalRef = useRef(null)
 
-  // Countdown timer logic
+  // Countdown timer logic - optimized with useCallback
   useEffect(() => {
     const targetDate = new Date('2025-11-14T00:00:00').getTime()
     
@@ -26,17 +29,24 @@ function HeroSection() {
         setTimeLeft({ days, hours, minutes, seconds })
       } else {
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 })
+        if (intervalRef.current) {
+          clearInterval(intervalRef.current)
+        }
       }
     }
 
     updateCountdown()
-    const interval = setInterval(updateCountdown, 1000)
+    intervalRef.current = setInterval(updateCountdown, 1000)
     
-    return () => clearInterval(interval)
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current)
+      }
+    }
   }, [])
 
   // Helper function to format time with leading zeros
-  const formatTime = (time) => time.toString().padStart(2, '0')
+  const formatTime = useCallback((time) => time.toString().padStart(2, '0'), [])
 
   return (
     <div id='hero' className='min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white flex items-center justify-center relative overflow-hidden'>
